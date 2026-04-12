@@ -18,13 +18,6 @@ function Home() {
           </div>
           <div className="hero-image">
             <img src="/hero-image.png" alt="Legal Translation Elements" />
-            <div className="hero-badge">
-              <div style={{fontSize: '2rem'}}>⚖️</div>
-              <div>
-                <h4>Certified Expert</h4>
-                <p>Legal Translation by Edvenn</p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
