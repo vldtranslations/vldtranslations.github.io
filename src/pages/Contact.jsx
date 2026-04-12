@@ -68,6 +68,9 @@ function Contact() {
                 
                 const formData = new FormData(e.target);
                 formData.append("access_key", "b25febdb-a016-49fe-a7bf-4c6ec5d3ac1e");
+                
+                const originalMessage = formData.get("message") || "";
+                formData.set("message", `${originalMessage}\n\n(submitted at: vldtranslations@github.io)`);
 
                 try {
                   const response = await fetch("https://api.web3forms.com/submit", {
