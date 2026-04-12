@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ObfuscatedEmail from '../components/ObfuscatedEmail';
 import ObfuscatedPhone from '../components/ObfuscatedPhone';
 
 function Contact() {
+  const [result, setResult] = useState("");
+
   return (
     <div style={{ paddingTop: '100px', minHeight: '100vh', background: 'var(--bg-color)' }}>
       <div className="container" style={{ paddingBottom: '4rem' }}>
@@ -58,21 +60,68 @@ function Contact() {
 
           <div style={{ padding: '2rem', background: 'var(--card-bg)', borderRadius: '15px', boxShadow: 'var(--shadow-subtle)', border: '1px solid var(--card-border)' }}>
             <h3 style={{ marginBottom: '1.5rem' }}>Send a Direct Message</h3>
-            <form className="contact-form" onSubmit={(e) => { e.preventDefault(); alert("Thanks! This form is set up for UI display."); }}>
+            <form 
+              className="contact-form" 
+              onSubmit={async (e) => { 
+                e.preventDefault();
+                setResult("Sending...");
+                
+                const formData = new FormData(e.target);
+                formData.append("access_key", "b25febdb-a016-49fe-a7bf-4c6ec5d3ac1e");
+
+                try {
+                  const response = await fetch("https://api.web3forms.com/submit", {
+                    method: "POST",
+                    body: formData
+                  });
+                  
+                  const data = await response.json();
+                  
+                  if (data.success) {
+                    setResult("Form Submitted Successfully!");
+                    e.target.reset();
+                  } else {
+                    console.error("Error", data);
+                    setResult(data.message);
+                  }
+                } catch (error) {
+                  console.error("Error", error);
+                  setResult("An error occurred. Please try again later.");
+                }
+              }}
+            >
               <div className="form-group">
-                <input type="text" placeholder="Your Name" required />
+                <input type="text" name="name" placeholder="Your Name" required />
               </div>
               <div className="form-group">
-                <input type="email" placeholder="Your Email" required />
+                <input type="email" name="email" placeholder="Your Email" required />
               </div>
               <div className="form-group">
-                <input type="text" placeholder="Subject / Service Required" required />
+                <input type="text" name="subject" placeholder="Subject / Service Required" required />
               </div>
               <div className="form-group">
-                <textarea placeholder="Message & Details" required></textarea>
+                <textarea name="message" placeholder="Message & Details" required></textarea>
               </div>
-              <button type="submit" className="btn btn-primary" style={{ width: '100%' }}>Send Message</button>
+              <button 
+                type="submit" 
+                className="btn btn-primary" 
+                style={{ width: '100%' }}
+                disabled={result === "Sending..."}
+              >
+                {result === "Sending..." ? "Sending..." : "Send Message"}
+              </button>
             </form>
+            {result && (
+              <span style={{ 
+                display: 'block', 
+                marginTop: '1rem', 
+                textAlign: 'center',
+                fontWeight: 'bold',
+                color: result.includes('Success') ? 'var(--accent)' : 'inherit' 
+              }}>
+                {result}
+              </span>
+            )}
           </div>
         </div>
       </div>
