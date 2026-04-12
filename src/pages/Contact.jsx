@@ -7,6 +7,9 @@ function Contact() {
 
   return (
     <div style={{ paddingTop: '100px', minHeight: '100vh', background: 'var(--bg-color)' }}>
+      <title>Contact VLD Translations | Request a Quote</title>
+      <meta name="description" content="Contact VLD Translations for a free and non-binding price quote within 24 hours. Strict confidentiality guaranteed by a lawyer-linguist." />
+      
       <div className="container" style={{ paddingBottom: '4rem' }}>
         <div className="section-title">
           <h2>Contact Me</h2>

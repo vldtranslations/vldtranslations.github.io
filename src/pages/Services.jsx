@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 function Services() {
   return (
     <div style={{ paddingTop: '100px', minHeight: '100vh', background: 'var(--bg-color)' }}>
+      <title>English to French Translation Services | VLD Translations</title>
+      <meta name="description" content="Premium English-to-French translation services for law and corporate communications. Three-step process ensuring quality, accuracy, and strict terminology." />
+      
       <div className="container" style={{ paddingBottom: '4rem' }}>
         <div className="section-title">
           <h2>My Services</h2>

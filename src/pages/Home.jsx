@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 function Home() {
   return (
     <>
+      <title>VLD Translations | Expert Legal & Corporate English-to-French Translation</title>
+      <meta name="description" content="Deeply skilled English-to-French translation services specializing in law and corporate communications. Delivered by a certified legal translator and French lawyer-linguist." />
+      
       {/* Hero */}
       <section id="home" className="hero">
         <div className="container">

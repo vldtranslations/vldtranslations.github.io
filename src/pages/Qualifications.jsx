@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 function Qualifications() {
   return (
     <div style={{ paddingTop: '100px', minHeight: '100vh', background: 'var(--bg-color)' }}>
+      <title>Translator Qualifications & Credentials | VLD Translations</title>
+      <meta name="description" content="Certified legal translator and French lawyer-linguist located in Chicago. Master-level translation certification and French Business Law degree." />
+
       <div className="container" style={{ paddingBottom: '4rem' }}>
         <div className="section-title">
           <h2>Qualifications</h2>
