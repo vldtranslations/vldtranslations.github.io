@@ -61,7 +61,7 @@ function Contact() {
             </div>
           </div>
 
-          <div style={{ padding: '2rem', background: 'var(--card-bg)', borderRadius: '15px', boxShadow: 'var(--shadow-subtle)', border: '1px solid var(--card-border)' }}>
+          <div className="contact-form-container">
             <h3 style={{ marginBottom: '1.5rem' }}>Send a Direct Message</h3>
             <form 
               className="contact-form" 

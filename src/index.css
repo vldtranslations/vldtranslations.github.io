@@ -189,8 +189,14 @@ nav a:hover::after {
   background: var(--primary-light);
 }
 
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
 .btn-secondary {
-  margin-left: 1rem;
+  /* Margin handled by gap in hero-buttons */
 }
 
 .hero-image {
@@ -397,6 +403,14 @@ section {
   margin-bottom: 1.5rem;
 }
 
+.contact-form-container {
+  padding: 2rem;
+  background: var(--card-bg);
+  border-radius: 15px;
+  box-shadow: var(--shadow-subtle);
+  border: 1px solid var(--card-border);
+}
+
 .contact-item {
   display: flex;
   align-items: center;
@@ -521,5 +535,24 @@ footer p {
   
   .hero-content h1 {
     font-size: 3rem;
+  }
+
+  .contact-card {
+    padding: 1.5rem;
+    gap: 2rem;
+  }
+
+  .contact-form-container {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-card {
+    padding: 1rem;
+  }
+  
+  .contact-form-container {
+    padding: 1rem;
   }
 }

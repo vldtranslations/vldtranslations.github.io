@@ -16,8 +16,10 @@ function Home() {
               As a lawyer, you have high standards and strict deadlines. I provide high-quality French translations you can rely on. 
               Avoid the pitfalls of hiring an unqualified translator or relying on AI to do the job. Legal translation is a complex task!
             </p>
-            <Link to="/vldtranslations-contactalegalandbusinesstranslator" className="btn btn-primary">Get a Quote</Link>
-            <Link to="/vldtranslations-businessandlegaltranslationsintofrench" className="btn btn-secondary">Learn More</Link>
+            <div className="hero-buttons">
+              <Link to="/vldtranslations-contactalegalandbusinesstranslator" className="btn btn-primary">Get a Quote</Link>
+              <Link to="/vldtranslations-businessandlegaltranslationsintofrench" className="btn btn-secondary">Learn More</Link>
+            </div>
           </div>
           <div className="hero-image">
             <img src="/hero-image.png" alt="Legal Translation Elements" />
